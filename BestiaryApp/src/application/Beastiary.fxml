@@ -12,6 +12,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BeastiaryController">
@@ -39,62 +40,70 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="798.0">
                <children>
-                  <ListView layoutX="22.0" layoutY="39.0" prefHeight="274.0" prefWidth="395.0" />
+                  <Pane fx:id="controlPane" layoutX="494.0" layoutY="62.0" prefHeight="337.0" prefWidth="291.0">
+                     <children>
+                        <Button alignment="CENTER" layoutX="108.0" layoutY="14.0" mnemonicParsing="false" text="View" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="110.0" layoutY="122.0" mnemonicParsing="false" text="Edit" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="99.0" layoutY="240.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="96.0" layoutY="178.0" mnemonicParsing="false" text="Compare" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="109.0" layoutY="65.0" mnemonicParsing="false" text="Add" textAlignment="CENTER">
+                           <padding>
+                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </Pane>
                   <Label layoutX="166.0" layoutY="14.0" text="Bestiary" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="createMonBtn" layoutX="22.0" layoutY="329.0" mnemonicParsing="false" text="Create Beastiary" textAlignment="CENTER" />
-                  <Button layoutX="160.0" layoutY="329.0" mnemonicParsing="false" text="Import Beastiary" textAlignment="CENTER" />
-                  <Button layoutX="305.0" layoutY="329.0" mnemonicParsing="false" text="Use Test Beastiary" textAlignment="CENTER" />
+                  <Button fx:id="createMonBtn" layoutX="22.0" layoutY="329.0" mnemonicParsing="false" onAction="#createMonster" text="Create Beastiary" textAlignment="CENTER" />
+                  <Button fx:id="importBtn" layoutX="160.0" layoutY="329.0" mnemonicParsing="false" text="Import Beastiary" textAlignment="CENTER" />
+                  <Button fx:id="testBtn" layoutX="305.0" layoutY="329.0" mnemonicParsing="false" text="Use Test Beastiary" textAlignment="CENTER" />
                   <Button disable="true" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" text="Clear Current Beastiary" textAlignment="CENTER" />
-                  <Label layoutX="625.0" layoutY="14.0" text="Controls" textAlignment="CENTER" />
-                  <Button layoutX="528.0" layoutY="70.0" mnemonicParsing="false" text="View" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-                     </padding>
-                  </Button>
-                  <Button layoutX="672.0" layoutY="70.0" mnemonicParsing="false" text="Edit" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-                     </padding>
-                  </Button>
-                  <Button layoutX="519.0" layoutY="193.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-                     </padding>
-                  </Button>
-                  <Button layoutX="657.0" layoutY="193.0" mnemonicParsing="false" text="Compare" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-                     </padding>
-                  </Button>
-                  <Button layoutX="614.0" layoutY="308.0" mnemonicParsing="false" text="Add" textAlignment="CENTER">
-                     <padding>
-                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-                     </padding>
-                  </Button>
+                  <Label layoutX="617.0" layoutY="14.0" text="Controls" textAlignment="CENTER" />
+                  <ListView fx:id="bestiaryListView" layoutX="22.0" layoutY="45.0" prefHeight="200.0" prefWidth="361.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="182.0" prefWidth="798.0">
                <children>
+                  <Pane fx:id="userInputControls" disable="true" layoutX="300.0" layoutY="13.0" prefHeight="290.0" prefWidth="438.0">
+                     <children>
+                        <TextField fx:id="userElementInput" layoutX="268.0" layoutY="164.0" />
+                        <TextField fx:id="userTypeInput" layoutX="268.0" layoutY="113.0" />
+                        <TextField fx:id="userNameInput" layoutX="14.0" layoutY="13.0" />
+                        <TextArea fx:id="userDescInput" layoutX="14.0" layoutY="79.0" prefHeight="67.0" prefWidth="200.0" />
+                        <TextArea fx:id="userFlavTextInput" layoutX="14.0" layoutY="177.0" prefHeight="67.0" prefWidth="200.0" />
+                        <TextField fx:id="userMpInput" layoutX="268.0" layoutY="67.0" />
+                        <TextField fx:id="userHpInput" layoutX="268.0" layoutY="13.0" />
+                        <Button fx:id="saveBtn" layoutX="376.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveMonster" text="Save" />
+                        <Label layoutX="14.0" layoutY="59.0" text="Description" />
+                     </children>
+                  </Pane>
                   <Label layoutX="316.0" layoutY="5.0" text="Name" />
-                  <Label layoutX="313.0" layoutY="51.0" text="Description" />
                   <Label layoutX="574.0" layoutY="108.0" text="Type" />
                   <Label layoutX="578.0" layoutY="157.0" text="Element" textAlignment="CENTER" />
                   <Label layoutX="571.0" layoutY="5.0" text="HP" />
                   <Label layoutX="570.0" layoutY="60.0" text="MP" />
                   <Label layoutX="320.0" layoutY="168.0" text="FlavorText" />
                   <ImageView fitHeight="144.0" fitWidth="245.0" layoutX="37.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextField disable="true" layoutX="313.0" layoutY="23.0" />
-                  <TextField disable="true" layoutX="571.0" layoutY="78.0" />
-                  <TextField disable="true" layoutX="571.0" layoutY="23.0" />
-                  <TextArea disable="true" layoutX="313.0" layoutY="68.0" prefHeight="67.0" prefWidth="200.0" />
-                  <TextArea disable="true" layoutX="313.0" layoutY="192.0" prefHeight="67.0" prefWidth="200.0" />
-                  <TextField disable="true" layoutX="571.0" layoutY="126.0" />
-                  <TextField disable="true" layoutX="571.0" layoutY="179.0" />
-                  <Button disable="true" layoutX="619.0" layoutY="246.0" mnemonicParsing="false" text="Save" />
                </children>
             </AnchorPane>
         </items>
