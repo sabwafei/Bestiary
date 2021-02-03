@@ -77,7 +77,7 @@
                   <Button fx:id="createMonBtn" layoutX="22.0" layoutY="329.0" mnemonicParsing="false" onAction="#createMonster" text="Create Beastiary" textAlignment="CENTER" />
                   <Button fx:id="importBtn" layoutX="160.0" layoutY="329.0" mnemonicParsing="false" text="Import Beastiary" textAlignment="CENTER" />
                   <Button fx:id="testBtn" layoutX="305.0" layoutY="329.0" mnemonicParsing="false" text="Use Test Beastiary" textAlignment="CENTER" />
-                  <Button disable="true" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" text="Clear Current Beastiary" textAlignment="CENTER" />
+                  <Button fx:id="clrBtn" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#clrBtn" text="Clear Current Beastiary" textAlignment="CENTER" />
                   <Label layoutX="617.0" layoutY="14.0" text="Controls" textAlignment="CENTER" />
                   <ListView fx:id="bestiaryListView" layoutX="22.0" layoutY="45.0" prefHeight="200.0" prefWidth="361.0" />
                </children>
