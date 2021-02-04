@@ -13,100 +13,133 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BeastiaryController">
-   <children>
-      <MenuBar layoutX="49.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <SplitPane dividerPositions="0.5614489003880984" layoutX="281.0" layoutY="176.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="798.0">
-               <children>
-                  <Pane fx:id="controlPane" layoutX="494.0" layoutY="62.0" prefHeight="337.0" prefWidth="291.0">
-                     <children>
-                        <Button alignment="CENTER" layoutX="108.0" layoutY="14.0" mnemonicParsing="false" text="View" textAlignment="CENTER">
-                           <padding>
-                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-                           </padding>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="110.0" layoutY="122.0" mnemonicParsing="false" text="Edit" textAlignment="CENTER">
-                           <padding>
-                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-                           </padding>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="99.0" layoutY="240.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER">
-                           <padding>
-                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-                           </padding>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="96.0" layoutY="178.0" mnemonicParsing="false" text="Compare" textAlignment="CENTER">
-                           <padding>
-                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-                           </padding>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="109.0" layoutY="65.0" mnemonicParsing="false" text="Add" textAlignment="CENTER">
-                           <padding>
-                              <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-                           </padding>
-                        </Button>
-                     </children>
-                  </Pane>
-                  <Label layoutX="166.0" layoutY="14.0" text="Bestiary" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="createMonBtn" layoutX="22.0" layoutY="329.0" mnemonicParsing="false" onAction="#createMonster" text="Create Beastiary" textAlignment="CENTER" />
-                  <Button fx:id="importBtn" layoutX="160.0" layoutY="329.0" mnemonicParsing="false" text="Import Beastiary" textAlignment="CENTER" />
-                  <Button fx:id="testBtn" layoutX="305.0" layoutY="329.0" mnemonicParsing="false" text="Use Test Beastiary" textAlignment="CENTER" />
-                  <Button fx:id="clrBtn" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#clrBtn" text="Clear Current Beastiary" textAlignment="CENTER" />
-                  <Label layoutX="617.0" layoutY="14.0" text="Controls" textAlignment="CENTER" />
-                  <ListView fx:id="bestiaryListView" layoutX="22.0" layoutY="45.0" prefHeight="200.0" prefWidth="361.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="182.0" prefWidth="798.0">
-               <children>
-                  <Pane fx:id="userInputControls" disable="true" layoutX="300.0" layoutY="13.0" prefHeight="290.0" prefWidth="438.0">
-                     <children>
-                        <TextField fx:id="userElementInput" layoutX="268.0" layoutY="164.0" />
-                        <TextField fx:id="userTypeInput" layoutX="268.0" layoutY="113.0" />
-                        <TextField fx:id="userNameInput" layoutX="14.0" layoutY="13.0" />
-                        <TextArea fx:id="userDescInput" layoutX="14.0" layoutY="79.0" prefHeight="67.0" prefWidth="200.0" />
-                        <TextArea fx:id="userFlavTextInput" layoutX="14.0" layoutY="177.0" prefHeight="67.0" prefWidth="200.0" />
-                        <TextField fx:id="userMpInput" layoutX="268.0" layoutY="67.0" />
-                        <TextField fx:id="userHpInput" layoutX="268.0" layoutY="13.0" />
-                        <Button fx:id="saveBtn" layoutX="376.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveMonster" text="Save" />
-                        <Label layoutX="14.0" layoutY="59.0" text="Description" />
-                     </children>
-                  </Pane>
-                  <Label layoutX="316.0" layoutY="5.0" text="Name" />
-                  <Label layoutX="574.0" layoutY="108.0" text="Type" />
-                  <Label layoutX="578.0" layoutY="157.0" text="Element" textAlignment="CENTER" />
-                  <Label layoutX="571.0" layoutY="5.0" text="HP" />
-                  <Label layoutX="570.0" layoutY="60.0" text="MP" />
-                  <Label layoutX="320.0" layoutY="168.0" text="FlavorText" />
-                  <ImageView fitHeight="144.0" fitWidth="245.0" layoutX="37.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BeastiaryController">
+	<children>
+		<MenuBar layoutX="49.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Close" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Edit">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Delete" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="About" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<SplitPane fx:id="application" dividerPositions="0.5614489003880984" layoutX="281.0" layoutY="176.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+			<items>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="798.0">
+					<children>
+						<Pane fx:id="controlPane" disable="true" layoutX="484.0" layoutY="45.0" prefHeight="232.0" prefWidth="291.0">
+							<children>
+								<Button alignment="CENTER" layoutX="108.0" layoutY="-1.0" mnemonicParsing="false" text="View" textAlignment="CENTER">
+									<padding>
+										<Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+									</padding>
+								</Button>
+								<Button alignment="CENTER" layoutX="110.0" layoutY="87.0" mnemonicParsing="false" text="Edit" textAlignment="CENTER">
+									<padding>
+										<Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+									</padding>
+								</Button>
+								<Button alignment="CENTER" layoutX="99.0" layoutY="176.0" mnemonicParsing="false" text="Remove" textAlignment="CENTER">
+									<padding>
+										<Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+									</padding>
+								</Button>
+								<Button alignment="CENTER" layoutX="96.0" layoutY="130.0" mnemonicParsing="false" text="Compare" textAlignment="CENTER">
+									<padding>
+										<Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+									</padding>
+								</Button>
+								<Button alignment="CENTER" layoutX="109.0" layoutY="43.0" mnemonicParsing="false" text="Add" textAlignment="CENTER">
+									<padding>
+										<Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+									</padding>
+								</Button>
+							</children>
+						</Pane>
+						<Label layoutX="166.0" layoutY="14.0" text="Bestiary" textAlignment="CENTER">
+							<font>
+								<Font name="System Bold" size="12.0" />
+							</font>
+						</Label>
+						<Button fx:id="createMonBtn" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" onAction="#createMonster" text="Create Monster" textAlignment="CENTER" />
+						<Button fx:id="importBtn" layoutX="62.0" layoutY="251.0" mnemonicParsing="false" text="Import Beastiary" textAlignment="CENTER" />
+						<Button fx:id="testBtn" layoutX="237.0" layoutY="251.0" mnemonicParsing="false" text="Use Test Beastiary" textAlignment="CENTER" />
+						<Button fx:id="clrBtn" layoutX="143.0" layoutY="376.0" mnemonicParsing="false" onAction="#clrBtn" text="Clear Current Beastiary" textAlignment="CENTER" />
+						<Label layoutX="617.0" layoutY="14.0" text="Controls" textAlignment="CENTER" />
+						<ListView fx:id="bestiaryListView" layoutX="22.0" layoutY="45.0" prefHeight="200.0" prefWidth="361.0" />
+						<Button fx:id="createElementBtn" layoutX="154.0" layoutY="316.0" mnemonicParsing="false" onAction="#createElementPop" text="Create Element" />
+						<Button fx:id="createTypeBtn" layoutX="280.0" layoutY="316.0" mnemonicParsing="false" onAction="#createTypePop" text="Create Monster Type" />
+						<Pane fx:id="newElementPopUp" layoutX="154.0" layoutY="245.0" prefHeight="105.0" prefWidth="220.0" style="-fx-background-color: black;" visible="false">
+							<children>
+								<Label layoutX="60.0" layoutY="14.0" text="Enter New Element" textFill="#f5f2f2" />
+								<TextField fx:id="newElementTxtFldPop" layoutX="36.0" layoutY="34.0" />
+								<Button fx:id="elemPopSubmitBtn" layoutX="84.0" layoutY="70.0" mnemonicParsing="false" onAction="#submitElementDataPop" text="Submit" />
+							</children>
+						</Pane>
+						<Pane fx:id="newTypePopUp" layoutX="399.0" layoutY="245.0" prefHeight="105.0" prefWidth="220.0" style="-fx-background-color: black;" visible="false">
+							<children>
+								<Label layoutX="60.0" layoutY="14.0" text="Enter New Type" textFill="#f5f2f2" />
+								<TextField fx:id="newtypeTxtFldPop1" layoutX="36.0" layoutY="34.0" onAction="#submitTypeDataPop" />
+								<Button fx:id="typePopSubmitBtn1" layoutX="84.0" layoutY="70.0" mnemonicParsing="false" onAction="#submitTypeDataPop" text="Submit" />
+							</children>
+						</Pane>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="lowerControls" minHeight="0.0" minWidth="0.0" prefHeight="182.0" prefWidth="798.0">
+					<children>
+						<Pane fx:id="userInputControls" disable="true" prefHeight="292.8" prefWidth="798.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<children>
+								<TextField fx:id="userNameInput" layoutX="266.0" layoutY="43.0" promptText="Name" />
+								<TextArea fx:id="userDescInput" layoutX="264.0" layoutY="75.0" prefHeight="67.0" prefWidth="200.0" promptText="Monster Description" />
+								<TextArea fx:id="userFlavTextInput" layoutX="263.0" layoutY="151.0" prefHeight="67.0" prefWidth="200.0" promptText="Flavor Text" />
+								<TextField fx:id="userMpInput" layoutX="362.0" layoutY="225.0" prefHeight="25.0" prefWidth="103.0" promptText="MP" />
+								<TextField fx:id="userHpInput" layoutX="263.0" layoutY="226.0" prefHeight="25.0" prefWidth="87.0" promptText="HP" />
+								<Button fx:id="saveBtn" layoutX="734.0" layoutY="256.0" mnemonicParsing="false" onAction="#saveMonster" text="Save" />
+								<Label layoutX="340.0" layoutY="6.0" text="Create Monster" textAlignment="CENTER">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="500.0" layoutY="38.0" text="Upload a Monster Image" />
+								<StackPane layoutX="499.0" layoutY="57.0" prefHeight="190.0" prefWidth="270.0" style="-fx-border-color: black;">
+									<children>
+										<ImageView fitHeight="180.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" />
+									</children>
+								</StackPane>
+								<Button layoutX="661.0" layoutY="29.0" mnemonicParsing="false" text="Use Place Holder " />
+								<Pane fx:id="element_typeControls" layoutX="12.0" layoutY="43.0" prefHeight="241.0" prefWidth="200.0">
+									<children>
+										<TextField fx:id="userElementInput" layoutX="3.0" layoutY="20.0" prefHeight="25.0" prefWidth="87.0" />
+										<TextField fx:id="userTypeInput" layoutX="3.0" layoutY="138.0" prefHeight="25.0" prefWidth="87.0" />
+										<Label layoutX="5.0" layoutY="4.0" text="Create a New Element" />
+										<Label layoutX="3.0" layoutY="121.0" text="Create a New Monster Type" />
+										<Label layoutX="4.0" layoutY="163.0" text="Use An Existing Monster Type" />
+										<Button fx:id="elemConfirmBtn" layoutX="99.0" layoutY="20.0" mnemonicParsing="false" onAction="#createElementNew" text="Confirm" />
+										<Button fx:id="typeConfirmBtn" layoutX="101.0" layoutY="138.0" mnemonicParsing="false" onAction="#createTypeNew" text="Confirm" />
+										<Label layoutX="3.0" layoutY="49.0" text="Use An Existing ELement" />
+                              <ListView fx:id="crtdElementListView" layoutX="1.0" layoutY="66.0" prefHeight="49.0" prefWidth="166.0" />
+                              <ListView fx:id="crtdTypeListView" layoutX="7.0" layoutY="180.0" prefHeight="49.0" prefWidth="166.0" />
+									</children>
+								</Pane>
+							</children>
+						</Pane>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
 </AnchorPane>
