@@ -1,5 +1,5 @@
 Bestiary Application
-Link to live project:
+
 ##Application for building, editing a bestiary typically used in RPGs
 ##Task
 I wanted to create an application to help me organize my own custom created monsters into an editable bestiary. 
